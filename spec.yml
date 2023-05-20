@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo "Installing dependencies..."
+      - npm install -g yarn
+  pre_build:
+    commands:
+      - echo "Executing pre-build steps..."
+      - yarn install
+  build:
+    commands:
+      - echo "Building the React application..."
+      - yarn build
+  post_build:
+    commands:
+      - echo "Executing post-build steps..."
+      # Additional post-build steps can be added here
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'build'
