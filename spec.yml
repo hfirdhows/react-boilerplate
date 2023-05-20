@@ -10,11 +10,11 @@ phases:
   pre_build:
     commands:
       - echo "Executing pre-build steps..."
-      - yarn install
+      - npm install
   build:
     commands:
       - echo "Building the React application..."
-      - yarn build
+      - npm run build
   post_build:
     commands:
       - echo "Executing post-build steps..."
